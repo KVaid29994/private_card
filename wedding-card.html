@@ -1959,6 +1959,28 @@ html, body {
 }
 
 
+/* ── music mute button ── */
+#muteBtn {
+  position: absolute;
+  top: 3.2cqw; right: 3.2cqw;
+  z-index: 100;
+  width: 9cqw; height: 9cqw;
+  border-radius: 50%;
+  border: 1px solid rgba(196,160,74,0.4);
+  background: rgba(12,22,40,0.6);
+  color: #C4A04A;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s, border-color 0.2s, opacity 0.4s;
+  opacity: 0;
+  pointer-events: none;
+}
+#muteBtn.visible { opacity: 1; pointer-events: auto; }
+#muteBtn:active { background: rgba(196,160,74,0.2); }
+#muteBtn svg { width: 4.5cqw; height: 4.5cqw; display: block; }
+
 /* ── Countdown slide: top-aligned so couple image is fully visible ── */
 .ev-countdown-slide {
   justify-content: flex-start !important;
@@ -2625,6 +2647,19 @@ html, body {
 
   <div class="ev-dots"><span class="ev-dot active"></span><span class="ev-dot"></span><span class="ev-dot"></span></div>
 </div>
+  <!-- background music -->
+  <audio id="bgMusic" src="Dil Le Gayee - Jasbir Jassi.mp3" loop preload="auto"></audio>
+  <button id="muteBtn" aria-label="Mute music" title="Mute / unmute music">
+    <svg id="muteSvgOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>
+    <svg id="muteSvgOff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+  </button>
 </div><!-- /#stage -->
 
 <script>
@@ -2864,10 +2899,33 @@ html, body {
     a.addEventListener('touchend', function (e) { e.stopPropagation(); }, { passive: true });
   });
 
+  /* ── music ── */
+  var bgMusic  = document.getElementById('bgMusic');
+  var muteBtn  = document.getElementById('muteBtn');
+  var svgOn    = document.getElementById('muteSvgOn');
+  var svgOff   = document.getElementById('muteSvgOff');
+  bgMusic.volume = 0.35;
+
+  function setMuted(muted) {
+    bgMusic.muted = muted;
+    svgOn.style.display  = muted ? 'none'  : '';
+    svgOff.style.display = muted ? ''      : 'none';
+  }
+  muteBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    setMuted(!bgMusic.muted);
+  });
+
+  function startMusic() {
+    bgMusic.play().catch(function () { /* autoplay blocked — user can tap mute btn to start */ });
+    muteBtn.classList.add('visible');
+  }
+
   function openEnvelope() {
     if (opened) { return; }
     opened = true;
 
+    startMusic();
     envelopeScreen.classList.add('open');
     envelopeScreen.style.cursor = 'default';
 
