@@ -308,7 +308,7 @@ html, body {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
   font-weight: 300;
-  font-size: 4.6cqw;
+  font-size: 4cqw;
   color: rgba(245,237,224,0.48);
   line-height: 1.65;
   margin-bottom: 3.5cqw;
@@ -317,7 +317,7 @@ html, body {
 .name {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 600;
-  font-size: 11cqw;
+  font-size: 9.5cqw;
   color: #F5EDE0;
   letter-spacing: 0.05em;
   line-height: 1;
@@ -329,7 +329,7 @@ html, body {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
   font-weight: 300;
-  font-size: 8.5cqw;
+  font-size: 7.4cqw;
   color: #C4A04A;
   margin: 1.4cqw 0;
   line-height: 1;
@@ -350,7 +350,7 @@ html, body {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
   font-weight: 300;
-  font-size: 4.4cqw;
+  font-size: 3.8cqw;
   color: rgba(245,237,224,0.5);
   line-height: 1.85;
 }
@@ -368,7 +368,7 @@ html, body {
 .date-main {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 400;
-  font-size: 8cqw;
+  font-size: 7cqw;
   color: #F5EDE0;
   line-height: 1.15;
   letter-spacing: 0.02em;
@@ -378,7 +378,7 @@ html, body {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
   font-weight: 300;
-  font-size: 4.2cqw;
+  font-size: 3.7cqw;
   color: rgba(245,237,224,0.45);
   margin-top: 0.5cqw;
 }
@@ -387,7 +387,7 @@ html, body {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
   font-weight: 300;
-  font-size: 4.2cqw;
+  font-size: 3.7cqw;
   color: rgba(245,237,224,0.42);
   letter-spacing: 0.03em;
 }
@@ -489,7 +489,7 @@ html, body {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
   font-weight: 500;
-  font-size: 5.2cqw;
+  font-size: 4.5cqw;
   line-height: 1.3;
   color: #F5DFC0;
   text-shadow: 0 2px 10px rgba(0,0,0,0.55);
@@ -504,7 +504,7 @@ html, body {
 }
 .cw-caption-title {
   font-weight: 800;
-  font-size: 8cqw;
+  font-size: 7cqw;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #F2A6B8;
@@ -515,7 +515,7 @@ html, body {
   font-weight: 500;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  font-size: 3.6cqw;
+  font-size: 3.2cqw;
   color: #D9B98A;
 }
 
@@ -525,7 +525,7 @@ html, body {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
   font-weight: 800;
-  font-size: 8.5cqw;
+  font-size: 7.4cqw;
   letter-spacing: 0.03em;
   color: #FF8A5C;
   text-shadow: 0 0 24px rgba(255,110,70,0.5), 0 2px 4px rgba(0,0,0,0.5);
@@ -546,7 +546,7 @@ html, body {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
   font-weight: 600;
-  font-size: 6.4cqw;
+  font-size: 5.6cqw;
   line-height: 1.4;
   color: #FCEEDD;
   text-shadow: 0 0 26px rgba(230,90,110,0.5), 0 2px 6px rgba(0,0,0,0.5);
@@ -671,7 +671,7 @@ html, body {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
   font-weight: 300;
-  font-size: 5.5cqw;
+  font-size: 4.8cqw;
   color: rgba(245,237,224,0.72);
   line-height: 1.65;
   text-wrap: balance;
@@ -696,7 +696,7 @@ html, body {
 
 .jn-word {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 8.2cqw;
+  font-size: 7.2cqw;
   font-weight: 400;
   font-style: italic;
   color: #F5EDE0;
@@ -716,6 +716,13 @@ html, body {
   letter-spacing: 0.5em;
   padding-left: 0.5em;
   line-height: 2;
+}
+
+/* tap-hint pinned to bottom — kept out of the flex flow so a tall
+   scooter photo can't push it past the bottom of the screen and clip it */
+#journeyScreen .tap-hint {
+  position: absolute; bottom: 4cqw;
+  left: 0; right: 0; text-align: center; margin: 0;
 }
 
 /* ── PERSONALITY SCREEN ── */
@@ -779,7 +786,7 @@ html, body {
 }
 .pers-ann-txt {
   font-family: 'Caveat', cursive;
-  font-size: 4.6cqw;
+  font-size: 4cqw;
   color: rgba(245,237,224,0.38);
   transform: rotate(-5deg);
   display: inline-block;
@@ -799,7 +806,7 @@ html, body {
 .pers-word { display: inline-block; }
 .pers-eyebrow {
   font-family: 'Caveat', cursive;
-  font-size: 7cqw;
+  font-size: 6cqw;
   color: rgba(196,160,74,0.82);
   line-height: 1.15;
   margin-bottom: 0;
@@ -807,12 +814,12 @@ html, body {
 .pers-big {
   font-family: 'Caveat', cursive;
   font-weight: 700;
-  font-size: 13cqw;
+  font-size: 11.5cqw;
   color: #F5EDE0;
   line-height: 0.92;
 }
 .pers-vibes {
-  font-size: 6cqw;
+  font-size: 5.2cqw;
   letter-spacing: 0.3cqw;
   margin: 0.3cqw 0;
   display: block;
@@ -827,7 +834,7 @@ html, body {
 }
 .pers-tagline {
   font-family: 'Caveat', cursive;
-  font-size: 6.7cqw;
+  font-size: 5.8cqw;
   font-style: italic;
   line-height: 1.22;
   display: flex;
@@ -844,7 +851,7 @@ html, body {
   justify-content: flex-end;
   text-align: right;
 }
-.pers-tagline--long { font-size: 5.9cqw; }
+.pers-tagline--long { font-size: 5.1cqw; }
 .pers-tag-txt { display: inline-block; }
 .pers-tag-arr {
   width: 6.4cqw;
@@ -865,7 +872,7 @@ html, body {
 }
 .pers-name {
   font-family: 'Caveat', cursive;
-  font-size: 6.5cqw;
+  font-size: 5.7cqw;
   color: #C4A04A;
   margin-top: 0.3cqw;
   display: block;
@@ -889,7 +896,7 @@ html, body {
 }
 .pers-pill {
   font-family: 'Caveat', cursive;
-  font-size: 5.3cqw;
+  font-size: 4.6cqw;
   color: #F5EDE0;
   background: rgba(196,160,74,0.1);
   border: 1.5px solid rgba(196,160,74,0.3);
@@ -972,7 +979,7 @@ html, body {
 }
 .pers-eyebrow-b {
   font-family: 'Caveat', cursive;
-  font-size: 7cqw;
+  font-size: 6cqw;
   color: rgba(245,140,155,0.78);
   line-height: 1.15;
   margin-bottom: 0;
@@ -980,20 +987,20 @@ html, body {
 .pers-big-b {
   font-family: 'Caveat', cursive;
   font-weight: 700;
-  font-size: 11cqw;
+  font-size: 9.8cqw;
   color: #F5EDE0;
   line-height: 0.92;
 }
 .pers-name-b {
   font-family: 'Caveat', cursive;
-  font-size: 6.5cqw;
+  font-size: 5.7cqw;
   color: rgba(220,60,90,0.9);
   display: block;
   margin-top: 0.2cqw;
 }
 .pers-ladaki {
   font-family: 'Caveat', cursive;
-  font-size: 5cqw;
+  font-size: 4.4cqw;
   color: rgba(245,237,224,0.36);
   font-style: italic;
   display: block;
@@ -1051,7 +1058,7 @@ html, body {
 .evp-heading-text {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic; font-weight: 600;
-  font-size: 6.6cqw; line-height: 1; letter-spacing: 0.01em;
+  font-size: 5.8cqw; line-height: 1; letter-spacing: 0.01em;
   color: #C4A04A; white-space: nowrap;
 }
 /* date chip wrapper — centered */
@@ -1060,12 +1067,12 @@ html, body {
 .evc-name {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 700; font-style: italic;
-  font-size: 18cqw; line-height: 0.9; color: #F5EDE0;
+  font-size: 15cqw; line-height: 0.9; color: #F5EDE0;
   text-align: center; margin-bottom: 3.5cqw;
 }
 /* tagline in Caveat handwriting */
 .evc-tag {
-  font-family: 'Caveat', cursive; font-size: 4.5cqw;
+  font-family: 'Caveat', cursive; font-size: 4cqw;
   color: rgba(196,160,74,0.75); text-align: center; margin-bottom: 2cqw;
 }
 /* time */
@@ -1077,7 +1084,7 @@ html, body {
 /* venue */
 .evc-venue {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 500; font-size: 4.5cqw; color: rgba(245,237,224,0.68);
+  font-weight: 500; font-size: 4cqw; color: rgba(245,237,224,0.68);
   line-height: 1.3; text-align: center; margin-bottom: 0.4cqw;
 }
 /* address */
@@ -1112,7 +1119,7 @@ html, body {
   text-align: center; pointer-events: none;
 }
 .evc-close-script {
-  font-family: 'Caveat', cursive; font-size: 6.5cqw;
+  font-family: 'Caveat', cursive; font-size: 5.8cqw;
   color: rgba(196,160,74,0.72);
 }
 .evc-close-sub {
@@ -1152,7 +1159,7 @@ html, body {
 .ev-page > .evp-heading { position: absolute; top: 9cqw; left: 0; right: 0; margin: 0; }
 .ev-page-sub {
   position: absolute; top: 17cqw; left: 0; right: 0;
-  font-family: 'Caveat', cursive; font-size: 4.6cqw;
+  font-family: 'Caveat', cursive; font-size: 4cqw;
   color: rgba(196,160,74,0.65); text-align: center;
 }
 
@@ -1174,10 +1181,10 @@ html, body {
   border: 1px solid rgba(196,160,74,0.4);
 }
 .ev-section .evc-chip-wrap { margin-bottom: 2.6cqw; }
-.ev-section .evc-name  { font-size: 14cqw; margin-bottom: 2cqw; }
-.ev-section .evc-tag   { font-size: 4cqw; margin-bottom: 1.8cqw; }
-.ev-section .evc-time  { font-size: 2.4cqw; margin-bottom: 1.6cqw; }
-.ev-section .evc-venue { font-size: 4cqw; }
+.ev-section .evc-name  { font-size: 11.5cqw; margin-bottom: 2cqw; }
+.ev-section .evc-tag   { font-size: 3.5cqw; margin-bottom: 1.8cqw; }
+.ev-section .evc-time  { font-size: 2.2cqw; margin-bottom: 1.6cqw; }
+.ev-section .evc-venue { font-size: 3.5cqw; }
 .ev-section .evc-addr  { margin-bottom: 2cqw; }
 .ev-section .evc-map   {
   margin-bottom: 0.5cqw;
@@ -1238,7 +1245,7 @@ html, body {
 }
 .ev-cd-num {
   font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700;
-  font-size: 9cqw; line-height: 1; color: #C4A04A;
+  font-size: 7.8cqw; line-height: 1; color: #C4A04A;
   font-variant-numeric: tabular-nums;
   animation: evDdPulse 3s ease-in-out infinite;
 }
