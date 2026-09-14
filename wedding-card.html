@@ -2162,7 +2162,7 @@ html, body {
             <path d="M 30 20 C 20 22, 10 14, 4 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
             <path d="M 12 5 L 4 6 L 7 14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span class="pers-tag-txt">😎 Dikhta hai daring, dil hai darling</span>
+          <span class="pers-tag-txt">😎 Dikhta hai daring, par dil se hai darling</span>
         </p>
       </div>
 
@@ -2544,7 +2544,7 @@ html, body {
           </div>
         </div>
         <p class="evc-name">Mehndi</p>
-        <p class="evc-tag">Henna · Music · Mehfil 🌿</p>
+        <p class="evc-tag">Heena · Music · Mehfil 🌿</p>
         <p class="evc-time">6 : 00 PM onwards</p>
         <p class="evc-venue">SOL Garden Cafe</p>
         <p class="evc-addr">10/6 Sansad Marg, New Delhi</p>
@@ -2648,7 +2648,7 @@ html, body {
   <div class="ev-dots"><span class="ev-dot active"></span><span class="ev-dot"></span><span class="ev-dot"></span></div>
 </div>
   <!-- background music -->
-  <audio id="bgMusic" src="Dil Le Gayee - Jasbir Jassi.mp3" loop preload="auto"></audio>
+  <audio id="bgMusic" src="Mamla Gadbad Hai - Gurdas Maan.mp3" preload="auto"></audio>
   <button id="muteBtn" aria-label="Mute music" title="Mute / unmute music">
     <svg id="muteSvgOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
@@ -2916,7 +2916,17 @@ html, body {
     setMuted(!bgMusic.muted);
   });
 
+  var MUSIC_START = 79;   /* 1 min 19 sec */
+  var MUSIC_END   = 160;  /* 2 min 40 sec */
+
+  bgMusic.addEventListener('timeupdate', function () {
+    if (bgMusic.currentTime >= MUSIC_END) {
+      bgMusic.currentTime = MUSIC_START;
+    }
+  });
+
   function startMusic() {
+    bgMusic.currentTime = MUSIC_START;
     bgMusic.play().catch(function () { /* autoplay blocked — user can tap mute btn to start */ });
     muteBtn.classList.add('visible');
   }
